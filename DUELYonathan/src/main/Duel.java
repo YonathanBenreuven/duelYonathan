@@ -12,7 +12,7 @@ public class Duel {
 	private Dueler d1;
 	private Dueler d2;
 	
-	
+
 	
 	
 	public static void main(String[] args){
