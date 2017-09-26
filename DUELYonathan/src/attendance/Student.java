@@ -10,7 +10,7 @@ public class Student implements Attendee {
 
 	@Override
 	public void setPresent(boolean present) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub 
 		
 	}
 

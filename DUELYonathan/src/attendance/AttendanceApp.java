@@ -90,7 +90,7 @@ public class AttendanceApp {
 				}
 			}
 		}
-		//student is not found, return null
+		//student is not  found, return null
 		return null;
 	}
 
