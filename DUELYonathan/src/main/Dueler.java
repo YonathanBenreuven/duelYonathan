@@ -11,7 +11,6 @@ public interface Dueler {
 	//returns the name of the Dueler
 	String getName();
 	
-	
 	//Students complete these two methods at the same time
 	//set the value of a field. Write this in such a way that it can only be called once (by the Duel, at the start)
 	void setStartingHP(int hp);

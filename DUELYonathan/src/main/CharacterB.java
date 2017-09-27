@@ -11,10 +11,12 @@ public class CharacterB implements Dueler {
 	public CharacterB(){
 		
 	}
+	
 	public void taunt() {
 		String taunt = ("Prepare to lose!");
 		System.out.println(taunt);
 	}
+	
 	public String getName() {
 		name = "Carson";
 		return name;
@@ -24,7 +26,6 @@ public class CharacterB implements Dueler {
 		System.out.println(hp);
 		hp = 100;
 		hp1 = hp;
-		
 	}
 	
 	public int getHP(){
@@ -33,8 +34,7 @@ public class CharacterB implements Dueler {
 	
 	
 
-	public boolean determineIfOpponentIsFair(Dueler d, int hp){
-		
+	public boolean determineIfOpponentIsFair(Dueler d, int hp){		
 		if(d.getHP()!=hp)
 		{
 			return false;
@@ -42,14 +42,11 @@ public class CharacterB implements Dueler {
 		else
 		{
 			return true;
-		}
-		
+		}		
 	}
 	
 	
-	public int getAction(Object caller) {
-		
-		
+	public int getAction(Object caller) {			
 		if(ifLoaded == false) {
 			ifLoaded = true;
 			return 0;
@@ -59,8 +56,7 @@ public class CharacterB implements Dueler {
 			if (randNumber == 1) {
 				ifLoaded = false;
 				return 1;
-			}else {
-					
+			}else {		
 				return 2;
 			}
 		}
@@ -68,8 +64,5 @@ public class CharacterB implements Dueler {
 	
 	public void hit(Object caller){
 			hp1=hp1-10;
-
-	}
-	
-	
+	}	
 }
