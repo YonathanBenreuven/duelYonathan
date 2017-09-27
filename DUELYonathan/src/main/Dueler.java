@@ -28,4 +28,3 @@ public interface Dueler {
 	//this method body should only be executed if Object is an instance of Duel
 	void hit(Object caller);
 }
-//
