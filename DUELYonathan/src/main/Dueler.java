@@ -3,7 +3,6 @@
 package main;
 
 public interface Dueler {
-
 	//print a taunt
 	//later: the taunt must be different each time the method is called
 	void taunt();

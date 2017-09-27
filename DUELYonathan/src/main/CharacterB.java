@@ -32,8 +32,6 @@ public class CharacterB implements Dueler {
 		return hp1;
 	}
 	
-	
-
 	public boolean determineIfOpponentIsFair(Dueler d, int hp){		
 		if(d.getHP()!=hp)
 		{
