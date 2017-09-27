@@ -11,7 +11,7 @@ public class CharacterA implements Dueler {
 	}
 
 	public void taunt() {
-		String taunt = ("Prepare to lose!");
+		String taunt = ("prepare to lose");
 		System.out.println(taunt);
 	}
 
