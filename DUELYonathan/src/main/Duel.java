@@ -1,4 +1,4 @@
-package duel;
+package main;
 
 //period 4
 
