@@ -3,40 +3,73 @@
 package main;
 
 public class CharacterB implements Dueler {
-	private int hp;
-	private String "Character B";
+
+	private String name;
+	public int hp1;
+	private boolean ifLoaded = false;
 	
-	public void CharacterB() {
+	public CharacterB(){
+		
+	}
+	public void taunt() {
+		String taunt = ("Prepare to lose!");
+		System.out.println(taunt);
+	}
+	public String getName() {
+		name = "Carson";
+		return name;
+	}
 	
-		public String getName() {
-			return "Character B";
-		}
+	public void setStartingHP(int hp) {
+		System.out.println(hp);
+		hp = 100;
+		hp1 = hp;
 		
-		public void taunt() {
-			System.out.println("You are bad");
-		}
+	}
+	
+	public int getHP(){
+		return hp1;
+	}
+	
+	
+
+	public boolean determineIfOpponentIsFair(Dueler d, int hp){
 		
-		public void setHp() {
-			this.hp = 100;
-		}
-		
-		public int getHp() {
-			return hp;
-		}
-		
-		public boolean determineIfOpponentIsFair(Dueler d, int hp);{
-			if (this.hp == hp) {
-				return true;
-			}
+		if(d.getHP()!=hp)
+		{
 			return false;
 		}
-		
-		public int getAction(Object caller) {
-			
+		else
+		{
+			return true;
 		}
 		
-		public void hit (Object caller) {
-			
+	}
+	
+	
+	public int getAction(Object caller) {
+		
+		
+		if(ifLoaded == false) {
+			ifLoaded = true;
+			return 0;
+		}else {
+			int randNumber = (int)Math.floor(Math.random()*2+1);
+				
+			if (randNumber == 1) {
+				ifLoaded = false;
+				return 1;
+			}else {
+					
+				return 2;
+			}
 		}
 	}
+	
+	public void hit(Object caller){
+			hp1=hp1-10;
+
+	}
+	
+	
 }
