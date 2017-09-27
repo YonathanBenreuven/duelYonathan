@@ -41,7 +41,6 @@ public class CharacterB implements Dueler {
 			}		
 		}
 		
-		
 		public int getAction(Object caller) {			
 			if(ifLoaded == false) {
 				ifLoaded = true;
