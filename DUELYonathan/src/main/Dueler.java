@@ -24,7 +24,6 @@ public interface Dueler {
 	//Object is the object calling this method. Use it to verify your opponent is not trying to gain the upperhand by figuring out what you are doing.
 	int getAction(Object caller);
 	
-	
 	//this method is called when you get hit. In the game, if you get hit, you lose 10 hp
 	//this method body should only be executed if Object is an instance of Duel
 	void hit(Object caller);
