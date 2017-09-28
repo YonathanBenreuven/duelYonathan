@@ -1,7 +1,17 @@
+package chatbotproject;
+
+public class chatbotmain {
+	public static chatbot chatbot = new chatbot();
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		chatbot.startTalking();
+	}
+
+}
 /**
 *Note: I wrote this class without a compiler, quickly. There are probably errors. I apologize. When I get Internet access with my own computer, I will revise.
 */
-package Strings;
 import java.util.Scanner;
 
 public class Utility{
