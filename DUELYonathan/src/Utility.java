@@ -105,7 +105,7 @@ public class Utility{
  try{
  value = Integer.parseInt(integerString);
  //will not continue if an error above is thrown
- isInteger = true;//exits loop if entr sy is valid
+ isInteger = true;//exits loop if entrsy is valid
  }catch(NumberFormatException e){
  print("You must enter an integer. You better try again.");
  integerString = getInput();
