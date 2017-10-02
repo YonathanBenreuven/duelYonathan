@@ -1,25 +1,32 @@
 package chatbotproject;
 
 public class chatbot {
-	private String username;
-	private Topic yonathan;
+
+	private String userName;
+	private ChatbotYonathan yonathan;
 	private boolean chatting;
-	public Chatbot() {
+	
+	
+	public chatbot() {
 		yonathan = new ChatbotYonathan();
-		username = "unkown user";
+		userName = "unknown user";
 		chatting = true;
 	}
+
 	public void startTalking() {
-		chatbotmain.print("welcome to our chatbot! what is your name?");
-		username = chatbotmain.getInput();
+		chatbotmain.print("Welcome to our chatbot! What is your name?");
+		userName = chatbotmain.getInput();
+		chatting = true;
 		while(chatting) {
-			chatbotmain.print("what do you want to talk about");
+			chatbotmain.print("What do you want to talk about?");
 			String response = chatbotmain.getInput();
 			if(yonathan.isTriggered(response)) {
-				yonathan.startChatting();
+				chatting = false;
+				yonathan.startChatting(response);
 			}else {
-				chatbotmain.print("im sorry i dont understand");
+				chatbotmain.print("I'm sorry. I don't understand.");
 			}
 		}
 	}
+
 }
