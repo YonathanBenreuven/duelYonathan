@@ -6,7 +6,7 @@ public class ArraysMain {
 	//private int[] testArray = {0,1,2,3,4};
 	private String[] testArray;
 	private int[] intRay;
-	private int[] qasd = {1,2,3,7,8,9,10};
+	private int[] qasd = {1,2,3,7,8,9,11};
 	private int first = 0;
 	
 	public ArraysMain() {
@@ -14,7 +14,7 @@ public class ArraysMain {
 		//populate (intRay);
 		//checkoccurences(intRay,3,18);
 		populate1ToN(intRay);
-		printls(intRay);
+		//printls(intRay);
 		//reverse(intRay);
 		//shuffle(intRay);
 		 //countLessThan(intRay,1);
@@ -24,12 +24,13 @@ public class ArraysMain {
 		System.out.println(Arrays.toString(intRay));
 		System.out.println(Arrays.toString(lcsp(qasd)));
 	}
-	private void printls(int[] arr) {
+	private int[] printls(int[] arr) {
 		// TODO Auto-generated method stub
 		int[] longestsequence = new int[lcsp(arr)[0]];
-		for(int i=0;i<lcsp(arr)[0];i++) {
+		for(int i=0;i<lcsp(arr)[0]-1;i++) {
 			longestsequence[i]=lcsp(arr)[i];
 		}
+		return longestsequence;
 	}
 	private int pullthelever() {
 		return lcs(intRay);
@@ -47,13 +48,15 @@ public class ArraysMain {
 		    if(str[i+1]==str[i]+1){
 		      current++;
 		    }else{
-		    first = i+1;  
+		      
 		      if(maxvalue<current){
+		    	  first = i+1;
 		        maxvalue=current;
 		      }
 		      current = 1;
 		    }
 		  }if(maxvalue<current){
+			  
 		        maxvalue=current;
 		      }
 		     
