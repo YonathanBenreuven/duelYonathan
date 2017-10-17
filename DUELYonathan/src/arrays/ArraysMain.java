@@ -6,17 +6,85 @@ public class ArraysMain {
 	//private int[] testArray = {0,1,2,3,4};
 	private String[] testArray;
 	private int[] intRay;
-		
+	private int[] qasd = {1,2,3,7,8,9,10};
+	private int first = 0;
 	
 	public ArraysMain() {
 		intRay = new int[100];
 		//populate (intRay);
 		//checkoccurences(intRay,3,18);
 		populate1ToN(intRay);
-		shuffle(intRay);
-		 
+		printls(intRay);
+		//reverse(intRay);
+		//shuffle(intRay);
+		 //countLessThan(intRay,1);
+		//frontToBack(intRay);
+		lcs(intRay);
 		//Arrays is a utility class inculded in java for 
 		System.out.println(Arrays.toString(intRay));
+		System.out.println(Arrays.toString(lcsp(qasd)));
+	}
+	private void printls(int[] arr) {
+		// TODO Auto-generated method stub
+		int[] longestsequence = new int[lcsp(arr)[0]];
+		for(int i=0;i<lcsp(arr)[0];i++) {
+			longestsequence[i]=lcsp(arr)[i];
+		}
+	}
+	private int pullthelever() {
+		return lcs(intRay);
+	}
+	private int lcs(int[] str) {
+		// TODO Auto-generated method stub
+		int maxvalue = 0;
+		  int current = 1;
+		  if(str.length==0){
+		      first = -1;  
+			  return 0;
+		        
+		      }
+		  for(int i=0;i<str.length-1;i++){
+		    if(str[i+1]==str[i]+1){
+		      current++;
+		    }else{
+		    first = i+1;  
+		      if(maxvalue<current){
+		        maxvalue=current;
+		      }
+		      current = 1;
+		    }
+		  }if(maxvalue<current){
+		        maxvalue=current;
+		      }
+		     
+		  return maxvalue;
+	}
+	public int[] lcsp(int[] arr) {
+		int[] murp = {0,0};
+		murp[0]=lcs(arr);
+		
+		murp[1]=first;
+		return murp;
+	}
+	private int countLessThan(int[] arr, int lessthen) {
+		// TODO Auto-generated method stub
+		int lessnum = 0;
+		for(int value: arr) {
+			if(value<lessthen) {
+			lessnum++;	
+			}
+			
+		}
+		return lessnum;
+	}
+	private int[] reverse(int[] arr) {
+		// TODO Auto-generated method stub
+		int[] temRay = new int[arr.length];
+		
+		for(int i=arr.length-1;i>-1;i--) {
+			temRay[i] = arr[arr.length-i-1];
+		}
+		return temRay;
 	}
 	private void shuffle(int[] arr) {
 		// TODO Auto-generated metho d stub
