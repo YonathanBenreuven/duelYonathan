@@ -5,7 +5,10 @@ public class Thing {
 	public Thing(String description) {
 		this.description = description;
 	}
-	public String toString() {
+	public String thing() {
 		return "I am just a " +description + " an inanimate object what do you expect me to say";
+	}
+	public String toString() {
+		return description;
 	}
 }
