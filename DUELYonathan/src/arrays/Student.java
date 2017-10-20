@@ -1,6 +1,6 @@
 package arrays;
 
-public class Student extends persons {
+public class Student extends Person {
 	public static final String[] grades = {"freshman","sophomore","junior","senior"};
 	private String grade;
 	public Student(String first, String last, borough home, int gradelevel) {

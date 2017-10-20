@@ -1,6 +1,6 @@
 package arrays;
 
-public class persons {
+public class Person {
 	
 	public static final String[] FIRST_START = {"chr","M","c"};
 	public static final String[] FIRST_MIDDLE = {"isti","icha","era"};
@@ -12,20 +12,21 @@ public class persons {
 	private String firstName;
 	private String lastName;
 	private Hobby hobby;
-	private persons[] friends;
+	private Person[] friends;
 	private borough home;
-	public persons(String first, String last,borough home ) {
+	private String nickname;
+	public Person(String first, String last,borough home ) {
 		this.firstName = first;
 		this.lastName = last;
 		this.home = home;
 		this.hobby = Hobby.randomHobby();
-		friends = new persons[3];
+		friends = new Person[3];
 	}
 	//chooses friends from people baser on who is of same classas this insance and who has
 	//same hobbies
-	public void mingle(persons[] people) {
+	public void mingle(Person[] people) {
 		System.out.println("i am in this class " + this.getClass());
-		for(persons p: people) {
+		for(Person p: people) {
 			if(p!= this) {
 				//reassign p to the better of 2 friends 
 				p = betterFriend(p, friends[0]);
@@ -33,7 +34,7 @@ public class persons {
 			}
 		}
 	}
-	private persons betterFriend(persons p, persons q) {
+	private Person betterFriend(Person p, Person q) {
 		//having a friends is better than no friend
 		if(p==null) {
 			return q;
@@ -59,12 +60,12 @@ public class persons {
 	}
 	public void printFriends() {
 		System.out.println("my name is " + firstName + lastName +" these are my friends :");
-	for(persons f: friends) {
+	for(Person f: friends) {
 		if(f != null)
 	}
 	}
-	// moves all persons in friends back one index and puts p at index 0
-	public void addFriendToFirstPlace(persons p) {
+	// moves all Person in friends back one index and puts p at index 0
+	public void addFriendToFirstPlace(Person p) {
 		for(int i =friends.length-1;i>0;i--) {
 			// moves each friend back a position
 			friends[i] = friends[i-1];
@@ -74,5 +75,36 @@ public class persons {
 	public String toString() {
 		return "My name is " + firstName + " " + lastName + " and i live in " + home;
 	}
-
+	public static String nickName(String name) {
+		String nickname = "";
+		String vowels = "aeiou";
+		int vowelNum = 0;
+		for(int i=0;i<name.length();i++) {
+			for(int o=0;o<name.length();o++) {
+				if(name.toLowerCase().substring(i,i+1).equals(vowels.substring(o,o+1))){
+					if(vowelNum<=1) {
+						if(vowelNum==1) {
+							vowelNum=i;
+						}else {
+							vowelNum=1;
+						}
+					}
+				}
+			}	
+		}
+		nickname = name.substring(0,vowelNum);
+		return nickname;
+	}
+	//java is pass by value
+	//meaning the parameters of a method are just values not refernces
+	//so if you change those value the orginial object is unchanged
+	//in this case 'name' will not be changed in fact nothign can change
+	//this.firstName via name
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+		nickname = nickName(firstName);
+	}
 }

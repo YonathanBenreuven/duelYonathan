@@ -15,8 +15,8 @@ public class objectArrays {
 	private void populate(Object[] people) {
 		// TODO Auto-generated method stub
 		for(int i=0; i< people.length; i++) {
-			String firstName = randomNameFrom(persons.FIRST_START,persons.FIRST_MIDDLE,persons.FIRST_END);
-			String lastName = randomNameFrom(persons.LAST_START,persons.LAST_MIDDLE,persons.LAST_END);
+			String firstName = randomNameFrom(Person.FIRST_START,Person.FIRST_MIDDLE,Person.FIRST_END);
+			String lastName = randomNameFrom(Person.LAST_START,Person.LAST_MIDDLE,Person.LAST_END);
 			borough b = randomBorough();
 			//big idea
 			//object arrays allow you to put multiple types of data into an arrays
@@ -25,7 +25,7 @@ public class objectArrays {
 				int grade = (int)(Math.random()*5)+9;
 				people[i] = new Student(firstName,lastName,b,grade);
 			}else {	
-			people[i]= new persons(firstName, lastName, b);
+			people[i]= new Person(firstName, lastName, b);
 			}
 		}
 	}
@@ -42,11 +42,11 @@ public class objectArrays {
 	private String get(String[] a) {
 		return a[(int)(Math.random()*a.length)];
 	}
-	public persons[] selectGroup(persons[] population, int length) {
-		persons[] group = new persons[length];
+	public Person[] selectGroup(Person[] population, int length) {
+		Person[] group = new Person[length];
 		group[0] = selectAPerson(population);
 		for(int i =1; i<length;i++) {
-		persons nextPerson = selectAPerson(population);
+		Person nextPerson = selectAPerson(population);
 			while(personInGroup(group, nextPerson)) {
 			nextPerson = selectAPerson(population);
 			}
@@ -56,7 +56,7 @@ public class objectArrays {
 	}
 	// return the number of differences between the two arr
 	// a differnce means they dont have the same element at the same position
-	public double countDiffernences(persons[] arr1, persons[] arr2) {
+	public double countDiffernences(Person[] arr1, Person[] arr2) {
 		int counter = 0;
 		for(int i=0;i<arr1.length;i++) {
 			for(int j=0;j<arr1.length;j++) {
@@ -68,7 +68,7 @@ public class objectArrays {
 		}
 		return counter;
 	}
-	private boolean personInGroup(persons[] group, persons nextPerson) {
+	private boolean personInGroup(Person[] group, Person nextPerson) {
 		// TODO Auto-generated method stub
 		for(int i = 0; i<group.length;i++) {
 			if(group[i]== nextPerson) {
@@ -78,7 +78,7 @@ public class objectArrays {
 		return false;
 	}
 
-	private persons selectAPerson(persons[] population) {
+	private Person selectAPerson(Person[] population) {
 		// TODO Auto-generated method stub
 		int randomNum= (int)(Math.random()*population.length);
 		return population[randomNum];
