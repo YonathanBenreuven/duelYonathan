@@ -51,7 +51,19 @@ public class CaveRoom {
 	 * "there are no door you are trapped in here"
 	 */
 	private void setDirections() {
+		directions="";
+		boolean doorFound = false;
 		
+		for(int i = 0;i<doors.length;i++) {
+			if(doors[i]!= null) {
+				doorFound = true;
+				directions += "\n   Theres is a "+doors[i].getDescription() + " to " +
+				toDirection(i)+". "+doors[i].getDetails();
+			}
+		}
+		if(!doorFound) {
+			directions += "there is no way out";
+		}
 		
 	}
 	/*
