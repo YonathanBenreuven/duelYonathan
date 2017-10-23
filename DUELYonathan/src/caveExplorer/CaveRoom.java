@@ -30,8 +30,37 @@ public class CaveRoom {
 	public void setDefaultContents(String defaultContents) {
 		this.defaultContents = defaultContents;
 	}
-	public CaveRoom() {
-		// TODO Auto-generated constructor stub
+	public CaveRoom(String description) {
+		this.description = description;
+		setDefaultContents(" ");
+		contents = defaultContents;
+		//differnce between defaultcontents and contents is "contents becomes an 'x' when your inside the room
+		// insde this room when you leave it goes back to default
+		
+		// note by default arrays will populate with null meaning there are no connections
+		borderingRooms = new  CaveRoom[4];
+		doors = new Door[4];
+		setDirections();
 	}
-
+	/*
+	 * for every door  in doors[] appends a String to "directions" describing the access
+	 * for example:
+	 * "there is a door to the north south"
+	 * 
+	 * if there are no doors at all directions should say:
+	 * "there are no door you are trapped in here"
+	 */
+	private void setDirections() {
+		
+		
+	}
+	/*
+	 * converts an int to a direction
+	 * toDirection(0) -> "the north"
+	 * etc 
+	 */
+	public static String toDirection(int dir) {
+		String[] arr = {"the north","the east","the south"	,"the west"};
+		return arr[dir];
+	}
 }
