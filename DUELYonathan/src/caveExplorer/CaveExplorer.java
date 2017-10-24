@@ -1,4 +1,5 @@
 package caveExplorer;
+import java.util.Scanner;
 
 public class CaveExplorer {
 	public static CaveRoom[][] caves;
