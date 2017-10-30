@@ -150,4 +150,8 @@ public class CaveRoom {
 		CaveRoom[][]c = CaveExplorer.caves;
 		c[0][1].setConnection(SOUTH, c[1][1], new Door());
 	}
+	public Door getDoor(int direction) {
+		// TODO Auto-generated method stub
+		return doors[direction];
+	}
 }
