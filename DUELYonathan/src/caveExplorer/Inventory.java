@@ -26,7 +26,7 @@ public class Inventory {
 					}else {
 						text += "|";
 					}
-					//contents of the room depend on what row
+					//contents of the room dep end on what row
 					if(i==0) {
 						text+="   ";//3 spaces
 					}else if(i==1) {
