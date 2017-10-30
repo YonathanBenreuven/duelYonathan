@@ -12,7 +12,7 @@ public class Inventory {
 	map = " ";
 	//create top line
 		for(int i = 0; i<CaveExplorer.caves[0].length-1;i++) {
-			map += "____"; //4 _
+			map += "____"; // 4 _
 		}
 		map+= "___\n"; //3 underscores to make it pretty
 		for(CaveRoom[] row : CaveExplorer.caves) {

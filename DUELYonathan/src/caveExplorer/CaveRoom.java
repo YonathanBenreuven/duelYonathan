@@ -118,7 +118,7 @@ public class CaveRoom {
 		return validEntries.indexOf(input)> -1 && input.length() ==1;
 	}
 	private void goToRoom(int direction) {
-	// first protect against nulll pointer exception
+	// first protect  against nulll pointer exception
 		//user cannot go through non existent door
 		if(borderingRooms[direction] != null && doors[direction] != null) {
 			CaveExplorer.currentRoom.leave();
