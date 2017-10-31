@@ -8,7 +8,7 @@ public class CaveExplorer {
 	public static Inventory inventory;
 	public static boolean playing= true;
 	public CaveExplorer() {
-		// TODO Auto-generated constructor stub
+		
 	}
 	public static void main(String[] args) {
 		in = new Scanner(System.in);

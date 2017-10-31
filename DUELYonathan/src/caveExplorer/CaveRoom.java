@@ -101,7 +101,7 @@ public class CaveRoom {
 	}
 	public void interpretInput(String input) {
 		while(!isValid(input)) {
-			System.out.println("you can only enter w a s or d");
+			printAllowedEntry();
 			input = CaveExplorer.in.nextLine();
 		}
 		/*
@@ -109,23 +109,42 @@ public class CaveRoom {
 		 * do not use an if statement
 		 * (or if you must dont use more than 1)
 		 */
-		String dirs = "wdsa";
-		goToRoom(dirs.indexOf(input));
+		String dirs = validKeys();
+		
+		respondToKey(dirs.indexOf(input));
+	}
+	// override to ad more keys, but always include 'wdsa'
+	public String validKeys() {
+		return "wdsa";
+	}
+	// override to print a custom string describing what keys do
+	public void printAllowedEntry() {
+		System.out.println("you can only enter w a s or d");
 	}
 	private boolean isValid(String input) {
-		String validEntries = "wdsa";
+		String validEntries = validKeys();
 		//System.out.println("checking for input "+input+", got index"+validEntries.indexOf(input));
 		return validEntries.indexOf(input)> -1 && input.length() ==1;
 	}
-	private void goToRoom(int direction) {
+	private void respondToKey(int direction) {
 	// first protect  against nulll pointer exception
 		//user cannot go through non existent door
+		if(direction < 4) {
 		if(borderingRooms[direction] != null && doors[direction] != null) {
 			CaveExplorer.currentRoom.leave();
 			CaveExplorer.currentRoom = borderingRooms[direction];
 			CaveExplorer.currentRoom.enter();
 			CaveExplorer.inventory.updateMap();
 		}
+	}else {
+		preformAction(direction);
+		}
+	}
+	//override to give response to keys other then wdsa
+	public void preformAction(int direction) {
+		
+		System.out.println("That key does nothing");
+		
 	}
 	/*
 	 * this will be where your group sets up all the caves and all the connections
