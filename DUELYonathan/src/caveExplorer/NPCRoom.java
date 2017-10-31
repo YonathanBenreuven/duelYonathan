@@ -42,4 +42,19 @@ public class NPCRoom extends CaveRoom {
 			System.out.println("That key does nothing");
 			}
 		}
+		public String getContents() {
+			if(containsNPC() && presentNPC.isActive()) {
+				return "M";
+			}else {
+				//return what would be returned otherwise
+				return super.getContents();
+			}
+		}
+		public String getDescription() {
+			if(containsNPC() && !presentNPC.isActive()) {
+				return super.getDescription() + "\n"+ presentNPC.getInactiveDescription();
+			}else {
+				return super.getDescription();
+			}
+		}
 }
