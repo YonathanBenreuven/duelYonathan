@@ -62,7 +62,7 @@ public class NPC {
 		
 		return inactiveDescription;
 	}
-
+ 
 	public String getActiveDescription() {
 		return activeDescription;
 	}
@@ -75,5 +75,15 @@ public class NPC {
 			setposition(newRow,newCol);
 		}
 		
+	}
+
+	public int[] calculateMovement() {
+		int[] moves = new int[2];
+		int[][] possibleMoves = {{-1,0},{0,1},{1,0},{0,-1}};
+		int rand = (int)(Math.random()*4);
+		moves[0] = possibleMoves[rand][0]+currentRow;
+		moves[1] = possibleMoves[rand][1]+currentCol;
+		//while() {}
+		return null;
 	}
 }

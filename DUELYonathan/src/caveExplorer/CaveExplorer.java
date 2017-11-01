@@ -34,7 +34,7 @@ public class CaveExplorer {
 		for(NPC n: npcs) {
 			n.act();
 		}
-		
+		inventory.updateMap();
 	}
 	public static void print(String s) {
 		// note later you can replace this line with the more 

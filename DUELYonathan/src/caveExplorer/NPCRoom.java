@@ -22,7 +22,7 @@ public class NPCRoom extends CaveRoom {
 	}
 	
 	// the above methods are new  features to a caveRoom,
-	// the methods below replace CaveRoom methods (override)
+	// the methods b elow replace CaveRoom methods (override)
 	
 	public String validKeys() {
 		return "wdsae";

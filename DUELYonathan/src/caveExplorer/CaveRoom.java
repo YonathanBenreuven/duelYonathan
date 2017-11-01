@@ -2,7 +2,7 @@ package caveExplorer;
 
 public class CaveRoom {
 
-	private String description; // tells what the room looks like
+	private String description; // tells wh at the room looks like
 	private String directions; //tells what you can do
 	private String contents; // a symbol representing whats in the room
 	private String defaultContents;
