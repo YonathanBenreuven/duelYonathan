@@ -83,7 +83,11 @@ public class NPC {
 		int rand = (int)(Math.random()*4);
 		moves[0] = possibleMoves[rand][0]+currentRow;
 		moves[1] = possibleMoves[rand][1]+currentCol;
-		//while() {}
-		return null;
+		while(currentRoom.getDoor(rand)== null || !(CaveExplorer.caves[moves[0]][moves[1]] instanceof NPCRoom)) {
+			rand = (int)(Math.random()*4);
+			moves[0] = possibleMoves[rand][0]+currentRow;
+			moves[1] = possibleMoves[rand][1]+currentCol;
+		}
+		return moves;
 	}
 }

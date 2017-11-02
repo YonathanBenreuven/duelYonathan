@@ -152,16 +152,19 @@ public class CaveRoom {
 	public static void setUpCaves() {
 		// all of this code can be changed
 		// decide how big your caves should be
-		CaveExplorer.caves = new CaveRoom[5][5];
+		CaveExplorer.caves = new NPCRoom[5][5];
 		//populate with caves and a default description when starting use coordinates for debugging
 		for(int row =0;row<CaveExplorer.caves.length;row++) {
 			// note the differnce in length
 			for(int col =0; col< CaveExplorer.caves[row].length;col++) {
 				//create a default cave
-				CaveExplorer.caves[row][col] = new CaveRoom("This cave has coords ("+row+","+col+")");
+				CaveExplorer.caves[row][col] = new NPCRoom("This cave has coords ("+row+","+col+")");
 			}
 		}
 		//3 replace default rooms with custom rooms
+		CaveExplorer.npcs = new  NPC[1];
+		CaveExplorer.npcs[0] = new  NPC();
+		CaveExplorer.npcs[0].setposition(1, 1);
 		// 4 set your starting room
 		CaveExplorer.currentRoom = CaveExplorer.caves[0][1];
 		CaveExplorer.currentRoom.enter();
