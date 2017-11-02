@@ -173,7 +173,10 @@ public class CaveRoom {
 		c[0][1].setConnection(SOUTH, c[1][1], new Door());
 	}
 	public Door getDoor(int direction) {
-		// TODO Auto-generated method stub
+		if(direction>=0 && direction < doors.length) {
 		return doors[direction];
-	}
+		}else {
+			return null;
+			}
+		}
 }
