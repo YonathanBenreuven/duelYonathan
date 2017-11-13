@@ -29,7 +29,7 @@ private int index;
 	public String toString() {
 		return description;
 	}
-
+// work on themeatic room
 	private int getIndex() {
 		return index;
 	}
