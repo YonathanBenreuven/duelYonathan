@@ -63,16 +63,19 @@ public class Searching {
 	}
 	
 	private int binarySearch(int[] searchThis, int startIndex, int endIndex, int target) {
-		if(searchThis[startIndex+endIndex/2]==target) {
-			return startIndex;
+		
+		//this aint done
+		
+		if(searchThis[(int)startIndex+endIndex/2]==target) {
+			return (int)startIndex+endIndex/2;
 		}
-		if(searchThis[startIndex+endIndex/2]>target) {
-			binarySearch(searchThis,0, ,target);
+		if(searchThis[(int)startIndex+endIndex/2]>target) {
+			binarySearch(searchThis,(int)startIndex+endIndex/2,endIndex ,target);
 		}
-		if(searchThis[startIndex+endIndex/2]<target) {
-			
+		if(searchThis[(int)startIndex+endIndex/2]<target) {
+			binarySearch(searchThis,startIndex,(int)startIndex+endIndex/2,target);
 		}
-		return target;
+		return -1;
 		
 	}
 
